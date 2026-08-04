@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Search Results - MilletMetaDB</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-50 text-gray-800 font-sans">
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+<h1 class="text-3xl font-bold mb-6 text-center text-orange-700">Search Results</h1>
+
+<div id="resultsTable" class="overflow-x-auto">
+<!-- Table will be inserted here -->
+</div>
+
+<div id="noResults" class="text-center text-red-600 font-semibold hidden">
+
+No
+
+results found.
+</div>
+</div>
+
+70/166
+
+<script>
+
+async function fetchResults(queryType,
+
+queryTerm) {
+
+try {
+
+const response = await fetch('search_metabolites.php', {
+method: 'POST',
+
+headers: {
+
+'Content-Type': 'application/x-www-form-urlencoded',
+},
+body:
+`query_type=${encodeURIComponent(queryType)}&query_term=${encodeURICompon
+ent(queryTerm)}`
+});
+
+const data = await response.json();
+
+if (!data.length) {
+document.getElementById("noResults").classList.remove("hidden");
+return;
+}
+
+const table = document.createElement("table");
+table.className = "min-w-full bg-white shadow-md rounded-lg overflow-hidden";
+table.innerHTML = `
+<thead class="bg-orange-200">
+<tr>
+<th class="px-4 py-2 text-left">Metabolite Name</th>
+<th class="px-4 py-2 text-left">PubChem ID</th>
+<th class="px-4 py-2 text-left">SMILES</th>
+<th class="px-4 py-2 text-left">Activity (Predicted)</th>
+<th class="px-4 py-2 text-left">Activity (Experimental)</th>
+71/166
+
+<th class="px-4 py-2 text-left">Reference</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-orange-100">
+${data.map(row => `
+<tr>
+<td class="px-4 py-2">${row.metabolite_name}</td>
+<td class="px-4 py-2">${row.pubchem_id}</td>
+<td class="px-4 py-2">${row.smiles}</td>
+<td class="px-4 py-2 whitespace-pre-line">${row.predicted_function}</td>
+<td class="px-4 py-2 whitespace-pre-line">${row.experimental_function}</td>
+<td class="px-4 py-2">${row.ref_article}</td>
+</tr>`).join('')}
+</tbody>
+`;
+
+document.getElementById("resultsTable").appendChild(table);
+} catch (error) {
+
+console.error("Error
+
+fetching data:", error);
+document.getElementById("noResults").textCon
+tent = "Something went wrong while fetching
+results.";
+document.getElementById("noResults").classLis
+t.remove("hidden");
+}
+}
+
+72/166
+
+// Get URL parameters and auto-trigger search
+
+const urlParams =
+
+new URLSearchParams(window.location.search);
+
+const queryType =
+
+urlParams.get('query_type');
+
+const queryTerm =
+
+urlParams.get('query_term');
+
+if (queryType && queryTerm) {
+fetchResults(queryType, queryTerm);
+} else {
+document.getElementById("noResults").classList.remove("hidden");
+document.getElementById("noResults").textContent = "Invalid query.";
+}
+</script>
+
+</body>
+</html>
+

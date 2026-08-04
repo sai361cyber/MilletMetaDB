@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorghum - Abiotic Endoplasmic Reticulum (ER) Stress Details</title>
+
+<script
+
+src="https://cdn.tailwindcss.com"></script>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+<style>
+
+body {
+
+font-family: 'Inter', sans-serif;
+
+background-
+
+color: #fefce8; /* Very light yellow/cream for background */
+
+color:
+
+#7c2d12; /* Darker orange-brown text */
+}
+.container {
+
+max-
+
+width: 1200px;
+margin: 0 auto;
+padding: 1.5rem;
+}
+.section-title {
+
+font-size: 1.875rem; /* text-3xl */
+
+font-weight: 600; /* font-semibold */
+Darker slate gray */
+
+color: #1e293b; /*
+
+margin-bottom: 1.5rem;
+
+border-
+
+113/166
+
+bottom: 2px solid #f59e0b; /* Orange-500 border */
+padding-bottom: 0.5rem;
+}
+.back-button, .fetch-button {
+display: inline-block;
+background-color: #f59e0b;
+color: white;
+
+padding:
+
+0.75rem 1.5rem;
+
+border-
+
+radius: 0.375rem;
+
+text-
+
+decoration: none;
+
+font-
+
+weight: 600;
+1.5rem;
+
+margin-bottom:
+border: none;
+
+cursor: pointer;
+
+margin-
+
+right: 1rem;
+}
+.back-button:hover, .fetch-button:hover {
+background-color: #ea8a0c;
+}
+
+/* Styles for the specific box for ER Stress - Sorghum */
+.bls-details-box {
+
+background-color: #fffbeb; /* Lighter
+
+yellow background */
+
+border: 2px solid #d97706; /* Darker
+
+orange border */
+border-radius: 0.75rem;
+
+padding: 2rem;
+
+margin-top: 2rem;
+
+box-shadow: 0 4px 6px rgba(0, 0, 0,
+
+0.1);
+}
+
+114/166
+
+.bls-details-box h2 {
+
+font-size: 2rem;
+
+font-weight: 700;
+
+color: #92400e; /* Even darker
+
+orange-brown */
+
+margin-bottom: 1.5rem;
+
+}
+.bls-details-box p {
+font-size: 1.125rem;
+
+line-
+
+height: 1.75rem;
+#7c2d12;
+
+color:
+
+margin-bottom:
+
+1rem;
+}
+.bls-details-box ul {
+list-style-type: square;
+margin-left: 1.5rem;
+
+color:
+
+#7c2d12;
+}
+.bls-details-box ul li {
+
+margin-
+
+bottom: 0.5rem;
+}
+.bls-metabolites-section {
+margin-top: 1.5rem;
+}
+.bls-metabolites-section table {
+width: 100%;
+collapse;
+
+border-collapse:
+margin-top: 1rem;
+
+}
+.bls-metabolites-section th, .bls-metabolites-section td {
+border: 1px solid #fbd38d; /* Light orange border */
+
+115/166
+
+padding: 0.75rem;
+
+text-align: left;
+
+font-size:
+
+0.95rem;
+}
+.bls-metabolites-section th {
+
+background-
+
+color: #f6ad55; /* Orange-400 */
+
+color: white;
+
+font-weight: 600;
+}
+.bls-metabolites-section tr:nth-child(even) {
+
+background-
+
+color: #fef3c7; /* Lighter cream for even rows */
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="mhome.html" class="back-button">← Back to Home</a>
+<h1 id="pageTitle" class="section-title">Sorghum - Abiotic Endoplasmic Reticulum (ER)
+Stress Details</h1>
+
+<div id="erStressSorghumDetailsBox" class="bls-details-box">
+<h2 id="erStressSorghumBoxTitle"></h2>
+<p><strong>Stress Type:</strong>Abiotic Endoplasmic Reticulum (ER)
+Stress<</span></p>
+<p><strong>Disease:</strong>NIL</span></p>
+<p><strong>Causal Agent:</strong> NIL</span></p>
+<p><strong>Cultivar Name:</strong>CSF18 (sensitive), CSF20 (tolerant)</span></p>
+<p><strong>Geographical:</strong> Agronomic Institute of Pernambuco (IPA) in
+Brazil</span></p>
+<p><strong>Conditions:</strong>Tunicamycin treatment: 0 (control), 0.5, 1.5, and
+2.5 µg/mL</span></p>
+116/166
+
+<p><strong>Parts of the Plant:</strong>Shoots and roots</span></p>
+<p><strong>Method Used for Infection:</strong> NIL</span></p>
+<p><strong>Techniques Used to Identify:</strong>GC-MS</span></p>
+
+<button id="fetchMetabolitesButton" class="fetch-button"><a
+href=millet_results.html?millet=sorghum&table_name=sorghum_8>Fetch
+Metabolites</a></button>
+
+<div id="erStressSorghumMetabolites" class="bls-metabolites-section">
+<h3>Associated Metabolites:</h3>
+</div>
+</div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const urlParams = new URLSearchParams(window.location.search);
+// Default values tailored for Abiotic ER Stress
+milletType = urlParams.get('millet') || 'sorghum';
+
+const
+const stressType
+
+= urlParams.get('stress_type') || 'Abiotic Stress';
+const disease = urlParams.get('disease') || 'Abiotic Endoplasmic Reticulum (ER)
+Stress';
+const causalAgent = urlParams.get('causal_agent') || 'Various Abiotic Factors (e.g.,
+Heat, Salinity, Drought)'; // Common ER stress inducers
+
+const cultivarName = urlParams.get('cultivar_name');
+urlParams.get('geographical');
+
+const conditions = urlParams.get('conditions');
+
+const partsOfPlant = urlParams.get('parts_of_plant');
+urlParams.get('method_infection');
+
+const geographical =
+
+const methodInfection =
+
+const techniquesUsedToIdentify =
+
+urlParams.get('techniques_used_to_identify');
+117/166
+
+// Populate static details
+document.getElementById('pageTitle').textContent =
+`${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease} Details`;
+document.getElementById('erStressSorghumBoxTitle').textContent = `Details for
+${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease}`;
+document.getElementById('erStressSorghumMillet').textContent =
+milletType.charAt(0).toUpperCase() + milletType.slice(1);
+document.getElementById('erStressSorghumStressType').textContent = stressType;
+document.getElementById('erStressSorghumDisease').textContent = disease;
+document.getElementById('erStressSorghumCausalAgent').textContent = causalAgent;
+
+document.getElementById('erStressSorghumCultivarName').textContent =
+cultivarName || 'NIL';
+document.getElementById('erStressSorghumGeographical').textContent = geographical ||
+'NIL';
+
+document.getElementById('erStressSorghumConditions').textContent =
+
+conditions || 'NIL';
+document.getElementById('erStressSorghumPartsOfPlant').textContent = partsOfPlant ||
+'NIL';
+
+document.getElementById('erStressSorghumMethodInfection').textContent =
+
+methodInfection || 'NIL';
+document.getElementById('erStressSorghumTechniquesUsedToIdentify').textContent =
+techniquesUsedToIdentify || 'NIL';
+
+const fetchMetabolitesButton =
+document.getElementById('fetchMetabolitesButton');
+const resultsContainer =
+document.getElementById('erStressSorghumMetabolites');
+
+118/166
+
+fetchMetabolitesButton.addEventListener('click', async () => {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>Loading
+metabolites...</p>';
+
+// Construct query parameters for the fetch_metabolites.php endpoint
+const params = new URLSearchParams({
+millet: milletType,
+stress_type: stressType,
+disease: disease,
+
+causal_agent:
+
+causalAgent,
+// *** IMPORTANT CHANGE: Target 'sorghum_8' for ER Stress ***
+table_name: 'sorghum_8'
+});
+
+try {
+const response = await fetch(`fetch_metabolites.php?${params.toString()}`);
+if (!response.ok) {
+
+throw new Error(`HTTP error! status: ${response.status}`);
+
+}
+const data = await response.json();
+
+if (data.error) {
+
+resultsContainer.innerHTML = `<h3>Associated
+
+Metabolites:</h3><p>Error:
+${data.error}</p>`;
+return;
+}
+
+if (data.length > 0) {
+let tableHTML = `
+119/166
+
+<table>
+<thead>
+<tr>
+<th>Metabolites</th>
+<th>PubChem ID</th>
+<th>SMILES</th>
+<th>Activity (Experimental)</th>
+<th>Activity (Predicted)</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+`;
+
+data.forEach(metabolite => {
+tableHTML += `
+<tr>
+<td>${metabolite['METABOLITES'] || 'NIL'}</td>
+<td>${metabolite['PUBCHEM ID'] || 'NIL'}</td>
+<td>${metabolite['SMILES'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(EXPERIMENTAL)'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(PREDICTED)'] || 'NIL'}</td>
+<td>${metabolite['REFERENCES'] || 'NIL'}</td>
+</tr>
+`;
+});
+
+tableHTML += `
+120/166
+
+</tbody>
+</table>
+`;
+resultsContainer.innerHTML = `<h3>Associated
+Metabolites:</h3>${tableHTML}`;
+} else {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>No
+metabolites found for this selection.</p>';
+}
+} catch (error) {
+resultsContainer.innerHTML = `<h3>Associated Metabolites:</h3><p>Failed to
+fetch data: ${error.message}</p>`;
+console.error('Error fetching metabolites:', error);
+}
+});
+});
+</script>
+</body>
+</html>
+

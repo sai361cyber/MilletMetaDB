@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finger Millet Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+<style>
+
+body {
+
+font-family: 'Inter', sans-serif;
+
+background-
+
+color: #fefce8; /* Very light yellow/cream for background */
+
+color:
+
+#7c2d12; /* Darker orange-brown text */
+}
+.container {
+
+max-
+
+width: 1200px;
+margin: 0 auto;
+padding: 1.5rem;
+}
+.section-title {
+
+font-size: 1.875rem; /* text-3xl */
+
+font-weight: 600; /* font-semibold */
+Darker slate gray */
+
+color: #1e293b; /*
+
+margin-bottom: 1.5rem;
+
+border-
+
+bottom: 2px solid #f59e0b; /* Orange-500 border */
+padding-bottom: 0.5rem;
+}
+/* Styles for the individual detail boxes */
+52/166
+
+.detail-box {
+
+background-color: white;
+
+border-
+
+radius: 0.75rem; /* rounded-xl */
+
+box-shadow: 0 4px 6px
+
+rgba(0, 0, 0, 0.1); /* shadow-md */
+
+padding: 1.5rem;
+
+border: 1px solid #fbd38d; /* Light orange border */
+
+text-
+
+align: left;
+min-height: 400px; /* Added to make boxes bigger - adjust as needed */
+cursor: pointer; /* Indicate clickability */
+
+transition: all 0.2s ease-in-out;
+
+}
+.detail-box:hover {
+3px);
+
+transform: translateY(-
+
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+border-color: #f59e0b; /* Orange-500 on hover */
+}
+.detail-box h3 {
+font-size: 1rem; /* text-lg */
+
+font-weight: 600;
+
+Changed to a darker green for headings - example color */
+0.5rem; /* Reduced margin to make lines closer */
+for alignment within h3 */
+
+color: #1a472a; /*
+margin-bottom:
+
+display: flex; /* Use flexbox
+
+align-items: baseline; /* Align items to their
+
+baselines */
+}
+/* New styles for alignment of label and value within h3 */
+.detail-box h3 .detail-label {
+
+flex-shrink: 0; /* Prevent label from shrinking */
+
+width: 150px; /* Fixed width for labels, adjust as needed based on your longest label */
+margin-right: 0.5rem; /* Space between label and colon/value */
+600; /* Keep label bold */
+
+font-weight:
+
+color: #1a472a; /* Color for the label part */
+
+}
+
+.detail-box h3 .detail-value {
+value to take remaining space */
+
+flex-grow: 2; /* Allow
+color: #2b580c; /*
+53/166
+
+Color for the value part */
+
+font-weight: 400; /* Make
+
+value less bold than label */
+}
+/* NEW: Highlight class */
+
+.highlighted-box {
+
+3px solid #10b981; /* Green-500 for highlight */
+
+border:
+box-shadow: 0
+
+0 15px rgba(16, 185, 129, 0.5); /* Green glow */
+}
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<header class="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-6 shadowlg">
+<div class="container flex flex-col md:flex-row items-center justify-between">
+<div class="flex items-center mb-4 md:mb-0">
+<img src="logo.jpg" alt="TNAU Logo" class="h-20 w-20 mr-4 rounded-full border-2
+border-white">
+<h1 class="text-4xl font-bold tracking-tight">MilletMetaDB</h1>
+</div>
+<nav class="text-lg">
+<ul class="flex space-x-6">
+<li><a href="mhome.html" class="hover:text-orange-200 transition
+duration300">Home</a></li>
+<li><a href="about.html" class="hover:text-orange-200 transition
+duration300">About</a></li>
+<li><a href="#" class="hover:text-orange-200 transition
+duration300">Contact</a></li>
+<li><a href="#" class="hover:text-orange-200 transition
+duration300">Help</a></li>
+
+54/166
+
+<li><a href="#" class="hover:text-orange-200 transition
+duration300">Statistics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main class="flex-grow container py-8">
+<h2 id="milletNameTitle" class="section-title">Details for Finger Millet</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
+id="detailBoxesContainer">
+<div class="detail-box"
+
+data-cultivar-name="KM 252"
+
+data-
+
+geographical="susceptible variety of finger millet used in the experiment for studying
+blast disease"
+data-stress-type="Biotic"
+field infection"
+
+data-conditions="Natural
+
+data-parts-of-plant="Leaf, neck, finger"
+
+data-method-infection="Naturally infected field samples"
+data-disease="Leaf, neck, and finger blast"
+agent="Magnaporthe grisea"
+identify="TLC, GC-MS"
+
+data-causal-
+
+data-techniques-used-todata-box-id="fm1">
+
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Biotic</span></h3>
+<h3><span class="detail-label">Disease</span>: <span class="detailvalue">Leaf,
+finger and neck blast</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">Magnaporthe grisea</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">KM 252</span></h3>
+
+55/166
+
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">susceptible variety of finger millet used in the experiment for studying
+blast disease</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span
+class="detailvalue">Natural field infection</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Leaf, neck, finger</span></h3>
+
+56/166
+
+<h3><span class="detaillabel">Method Used for Infection</span>: <span
+class="detail-value">Naturally infected field samples</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">TLC, GC-MS</span></h3>
+</div>
+<div class="detail-box"
+(sensitive)"
+
+data-cultivar-name="IE 518 (tolerant), IE 405
+
+data-geographical="Nigeria (West Africa),Sudan (North-East Africa)"
+
+data-stress-type="Abiotic (Salt stress)"
+
+data-conditions="Salt treatment during
+
+seedling stage"
+
+data-parts-of-plant="Shoots (physiology); Whole plant
+
+(metabolomics)"
+
+data-method-infection="Salt stress induced via NaCl treatment in
+
+experimental setup"
+data-disease="NIL"
+
+data-causal-agent="NIL"
+
+data-
+
+techniques-used-to-identify="Metabolomics, pathway enrichment analysis,
+physiological assays (FV/FM, Pn, Na⁺/K⁺ levels"
+
+data-box-id="fm2">
+
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic (Salt stress)</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">IE 518 (tolerant), IE 405 (sensitive)</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">Nigeria (West Africa),Sudan (North-East Africa)</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span class="detailvalue">Salt
+treatment during seedling stage</span></h3>
+label">Parts of the Plant</span>: <span class="detailvalue">Shoots (physiology); Whole plant (metabolomics)</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">Salt stress induced via NaCl treatment in experimental
+setup</span></h3>
+57/166
+
+<h3><span class="detail<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">Metabolomics, pathway enrichment analysis, physiological assays
+(FV/FM, Pn, Na⁺/K⁺ levels</span></h3>
+</div>
+<div class="detail-box"
+
+data-cultivar-name="NIL"
+
+geographical="Coastal areas, Tamil Nadu, India"
+
+data-
+
+data-stress-type="Abiotic
+
+(Salt stress)"
+
+data-conditions="Greenhouse"
+
+data-parts-of-
+
+plant="seeds"
+
+data-method-infection="NaCl stress (0 & 400 mM); primed
+
+& unprimed seedlings"
+data-disease="NIL"
+
+data-causal-agent="NIL"
+
+data-
+
+techniques-used-to-identify="LC-MS/MS (phytohormones), GC-MS
+(VOCs)"
+data-box-id="fm3">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic (Salt stress)</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">NIL </span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">NIL</span></h3>
+label">Conditions</span>: <span class="detailvalue">Greenhouse</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">seeds</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">NaCl stress (0 & 400 mM); primed & unprimed seedlings</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">LC-MS/MS (phytohormones), GC-MS (VOCs)</span></h3>
+58/166
+
+<h3><span class="detail</div>
+</div>
+
+</main>
+
+<footer class="bg-orange-900 text-white py-6 mt-auto">
+<div class="container text-center text-sm">
+<p>&copy; 2024 MilletMetaDB. All rights reserved.</p>
+<p>Developed by TNAU Research Team. For academic and research purposes
+only.</p>
+<div class="flex justify-center space-x-4 mt-2">
+<a href="#" class="hover:text-orange-200 transition duration-300">Privacy
+Policy</a>
+<span class="text-gray-500">|</span>
+<a href="#" class="hover:text-orange-200 transition duration-300">Terms of
+Use</a>
+<span class="text-gray-500">|</span>
+<a href="#" class="hover:text-orange-200 transition duration300">Disclaimer</a>
+</div>
+</div>
+</footer>
+
+59/166
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const
+
+params = new URLSearchParams(window.location.search);
+
+const millet =
+
+params.get('millet'); // Get the millet type from the URL
+
+const stressType =
+
+params.get('stress_type'); // Get the stress_type from the URL
+
+const milletNameTitle = document.getElementById('milletNameTitle');
+
+const
+
+detailBoxes = document.querySelectorAll('.detail-box'); // Select all detail boxes
+
+if (millet) {
+// Capitalize first letter of millet name for display
+milletNameTitle.textContent = `Details for: ${millet.charAt(0).toUpperCase() +
+millet.slice(1)}`;
+} else {
+milletNameTitle.textContent = 'Finger Millet Details'; // Default for direct access
+}
+
+// --- Highlight Logic --// Check for 'finger' millet and the exact stress type for the first box
+
+if
+
+(millet === 'finger' && stressType === 'Leaf, finger and neck blast') {
+
+const
+
+firstBox = document.querySelector('.detail-box[data-box-id="fm1"]');
+
+if
+
+(firstBox) {
+firstBox.classList.add('highlighted-box');
+}
+}
+// Add more highlighting conditions here for other finger millet stress types if needed
+// Example for fm2 and fm3 (assuming both are highlighted for 'Abiotic (Salt
+stress)')
+
+if (millet === 'finger' && stressType === 'Salinity Stress') {
+
+const
+
+60/166
+
+secondBox = document.querySelector('.detail-box[data-box-id="fm2"]');
+(secondBox) {
+
+if
+
+secondBox.classList.add('highlighted-box');
+
+}
+const thirdBox = document.querySelector('.detail-box[data-box-id="fm3"]');
+if (thirdBox) {
+
+thirdBox.classList.add('highlighted-box');
+
+}
+}
+// --- End Highlight Logic ---
+
+// Add click event listeners to each detail box
+detailBoxes.forEach((box) => {
+
+box.addEventListener('click', () => {
+
+let targetUrl = 'millet_results.html?'; // Base URL for all navigations
+const boxId = box.dataset.boxId; // Get the data-box-id
+
+// Always include the millet type in the query parameters
+const commonParams = {
+
+millet: 'finger' // Set to 'finger' as this is the
+
+finger millet details page
+};
+
+let specificParams = {}; // Parameters specific to each box type
+// Logic for each box based on its boxId to set table_name
+if (boxId === 'fm1') {
+
+specificParams = {
+
+table_name: 'finger_1'
+};
+
+61/166
+
+} else if (boxId === 'fm2') {
+specificParams = {
+table_name: 'finger_2'
+};
+} else if (boxId === 'fm3') {
+specificParams = {
+table_name: 'finger_3'
+};
+}
+// Add more else if blocks here for fm4, fm5, etc., if you add more boxes
+
+// Combine common parameters (like millet) with specific box parameters
+const allParams = { ...commonParams, ...specificParams };
+
+// This filter removes any parameters that have an empty string value.
+const filteredParams = Object.fromEntries(
+Object.entries(allParams).filter(([_, v]) => v !== '')
+);
+
+targetUrl += new URLSearchParams(filteredParams).toString();
+window.location.href = targetUrl;
+});
+});
+});
+</script>
+
+</body>
+</html>
+62/166
+
+<?php header('Content-Type:
+application/json');
+
+// Database connection parameters
+$servername = "localhost";
+$username = "root"; // Your database username
+$password = "";
+
+// Your database password (empty by default for XAMPP/WAMP root)
+
+$dbname = "mmdb"; // Your database name
+
+// Enable MySQLi error reporting for better debugging
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection if
+($conn->connect_error) {
+// Log the error and return JSON error message
+failed: " . $conn->connect_error);
+
+error_log("Database Connection
+
+die(json_encode(["error" => "Database connection
+
+failed. Please try again later."]));
+}
+// Get filter parameters from the URL
+// These are expected to be in snake_case as per your millet_details.html update
+$cultivar_name = $_GET['cultivar_name'] ?? '';
+$geographical = $_GET['geographical'] ?? '';
+$stress_type = $_GET['stress_type'] ?? '';
+63/166
+
+$conditions = $_GET['conditions'] ?? '';
+$parts_of_plant = $_GET['parts_of_plant'] ?? '';
+$method_infection = $_GET['method_infection'] ?? '';
+$disease = $_GET['disease'] ?? '';
+$causal_agent = $_GET['causal_agent'] ?? '';
+$techniques_used_to_identify = $_GET['techniques_used_to_identify'] ?? '';
+$millet_name_param = $_GET['millet'] ?? ''; // This is 'millet' from the details page, e.g.,
+'sorghum'
+
+// Get table name from URL, then validate and set default
+$table_name = $_GET['table_name'] ?? '';
+$valid_tables = [
+'millet_1', 'millet_2', 'millet_3', 'millet_4', 'millet_5', 'millet_6', 'millet_7', 'millet_8',
+'millet_9',
+'sorghum_1', 'sorghum_2', 'sorghum_3', 'sorghum_4', 'sorghum_5', 'sorghum_6',
+'sorghum_7', 'sorghum_8', 'sorghum_9',
+'pearl_1', 'pearl_2', 'pearl_3', 'pearl_4', 'pearl_5', 'pearl_6', 'pearl_7', 'pearl_8', 'pearl_9',
+'maize_1', 'maize_2', 'maize_3', 'maize_4', 'maize_5', 'maize_6', 'maize_7', 'maize_8',
+'maize_9',
+'finger_1', 'finger_2', 'finger_3', 'finger_4', 'finger_5', 'finger_6', 'finger_7', 'finger_8',
+'finger_9',
+'major_minor', 'stress_all', 'disease_all'
+];
+// Ensure table name is valid, prevent SQL injection if (!in_array($table_name,
+$valid_tables)) {
+
+error_log("Invalid table name attempted: " . $table_name .
+
+". Defaulting to sorghum_1.");
+$table_name = 'sorghum_1'; // Defaulting to a safe table if an invalid table name is
+provided
+}
+
+64/166
+
+// Build WHERE clauses dynamically
+$where_clauses = [];
+$params = [];
+$types = ""; // String for bind_param types (e.g., "sss")
+
+// IMPORTANT: Ensure these column names EXACTLY match your database schema (case and
+spaces).
+// Use backticks (`) for column names that contain spaces or are MySQL reserved words.
+// The conditions `!empty($var)` AND `!($var === 'NIL')` are crucial for filtering.
+
+if (!empty($cultivar_name) && $cultivar_name !== 'NIL') {
+$where_clauses[] = "`CULTIVAR NAME` LIKE ?";
+$params[] = '%' . $cultivar_name . '%';
+$types .= "s";
+}
+if (!empty($geographical) && $geographical !== 'NIL') {
+$where_clauses[] = "GEOGRAPHICAL LIKE ?"; // Assuming no spaces in column name
+$params[] = '%' . $geographical . '%';
+$types .= "s";
+}
+if (!empty($stress_type) && $stress_type !== 'NIL') {
+$where_clauses[] = "`STRESS TYPE` LIKE ?";
+$params[] = '%' . $stress_type . '%';
+$types .= "s";
+}
+if (!empty($conditions) && $conditions !== 'NIL') {
+$where_clauses[] = "CONDITIONS LIKE ?"; // Assuming no spaces in column name
+65/166
+
+$params[] = '%' . $conditions . '%';
+$types .= "s";
+}
+if (!empty($parts_of_plant) && $parts_of_plant !== 'NIL') {
+$where_clauses[] = "`PARTS OF THE PLANT` LIKE ?";
+$params[] = '%' . $parts_of_plant . '%';
+$types .= "s";
+}
+if (!empty($method_infection) && $method_infection !== 'NIL') {
+$where_clauses[] = "`METHOD USED FOR INFECTION` LIKE ?";
+$params[] = '%' . $method_infection . '%';
+$types .= "s";
+}
+if (!empty($disease) && $disease !== 'NIL') {
+$where_clauses[] = "DISEASE LIKE ?"; // Assuming no spaces in column name
+$params[] = '%' . $disease . '%';
+$types .= "s";
+}
+if (!empty($causal_agent) && $causal_agent !== 'NIL') {
+$where_clauses[] = "`CAUSAL AGENT` LIKE ?";
+$params[] = '%' . $causal_agent . '%';
+$types .= "s";
+}
+if (!empty($techniques_used_to_identify) && $techniques_used_to_identify !== 'NIL') {
+$where_clauses[] = "`TECHNIQUES USED TO IDENTIFY` LIKE ?";
+$params[] = '%' . $techniques_used_to_identify . '%';
+$types .= "s";
+}
+66/166
+
+// Add millet_name_param to filter if present (e.g., from first box)
+// Only apply this filter if your tables actually have a 'MILLET NAME' column
+// AND if the value in that column ('Sorghum', 'Pearl Millet', etc.) matches the parameter
+passed.
+if (!empty($millet_name_param) && $millet_name_param !== 'NIL') {
+$where_clauses[] = "`MILLET NAME` LIKE ?";
+$params[] = '%' . $millet_name_param . '%';
+$types .= "s";
+}
+
+// Updated SELECT statement to include all requested columns with proper backticks //
+Ensure these column names also EXACTLY match your database.
+$sql = "SELECT
+`MILLET NAME`,
+`SCIENTIFIC NAME`,
+`MAJOR/MINOR`,
+`CULTIVAR NAME`,
+GEOGRAPHICAL,
+`STRESS TYPE`,
+CONDITIONS,
+`PARTS OF THE PLANT`,
+`METHOD USED FOR INFECTION`,
+DISEASE,
+`CAUSAL AGENT`,
+METABOLITES,
+`PUBCHEM ID`,
+67/166
+
+SMILES,
+`ACTIVITY(EXPERIMENTAL)`,
+`ACTIVITY(PREDICTED)`,
+`TECHNIQUES USED TO IDENTIFY`,
+`REFERENCES`
+FROM `" . $table_name . "`";
+
+if (!empty($where_clauses)) {
+$sql .= " WHERE " . implode(" AND ", $where_clauses);
+}
+
+$result_data = [];
+try {
+
+if
+
+(!empty($params)) {
+$stmt = $conn->prepare($sql);
+if ($stmt === false) {
+// Log prepare statement error with SQL and parameters
+
+error_log("Failed to
+
+prepare statement: " . $conn->error . " SQL: " . $sql . " Params:
+" . print_r($params, true));
+
+throw new Exception("Database error: Could
+
+not prepare statement.");
+}
+// Bind parameters dynamically
+$stmt->bind_param($types, ...$params);
+$stmt->execute();
+$result = $stmt->get_result();
+} else {
+// No parameters, execute direct query (still safe as table name is validated)
+
+68/166
+
+$result = $conn->query($sql);
+if ($result === false) {
+// Log direct query error with SQL
+query: " . $conn->error . " SQL: " . $sql);
+
+error_log("Failed to execute direct
+throw new Exception("Database
+
+error: Could not execute query.");
+}
+}
+
+// Check if any rows were returned
+($result->num_rows > 0) {
+
+if
+
+while ($row
+
+= $result->fetch_assoc()) {
+$result_data[] = $row;
+}
+} else {
+// Log that no data was found for debugging
+$sql . " with params: " . print_r($params, true));
+
+error_log("No data found for SQL: " .
+// Return an empty JSON array as
+
+expected by the JavaScript when no data is found
+
+echo json_encode([]);
+
+exit(); //
+
+Terminate script execution after sending empty array
+}
+
+} catch (Exception $e) {
+// Log any caught exceptions
+
+error_log("Caught Exception in fetch_metabolites.php: " .
+
+$e->getMessage() . " SQL: " . $sql . " Params: " . print_r($params, true));
+error message for the frontend
+
+// Return a JSON
+
+echo json_encode(["error" => $e->getMessage(),
+
+"sql_query" => $sql, "params" =>
+$params]);
+
+exit(); // Terminate script execution after
+
+sending error
+}
+69/166
+
+$conn->close();
+
+// Finally, encode and echo the results (which could be an empty array if no data was
+found earlier and exit() was not called) echo json_encode($result_data);
+?>
+

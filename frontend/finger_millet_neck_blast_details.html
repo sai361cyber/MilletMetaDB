@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finger Millet - Leaf, finger and neck blast Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+<style>
+
+body {
+
+font-family: 'Inter', sans-serif;
+
+color: #fefce8; /* Very light yellow/cream for background */
+
+backgroundcolor:
+
+#7c2d12; /* Darker orange-brown text */
+}
+.container {
+
+max-
+
+width: 1200px;
+margin: 0 auto;
+padding: 1.5rem;
+}
+147/166
+
+.section-title {
+
+font-size: 1.875rem;
+
+/* text-3xl */
+
+font-weight: 600; /* font-
+
+semibold */
+
+color: #1e293b; /* Darker
+
+slate gray */
+
+margin-bottom: 1.5rem;
+
+border-bottom: 2px solid #f59e0b; /* Orange500 border */
+
+padding-bottom:
+
+0.5rem;
+}
+.back-button, .fetch-button { /* Added .fetch-button for consistent styling */
+display: inline-block;
+
+background-color: #f59e0b;
+
+padding: 0.75rem 1.5rem;
+none;
+
+border-radius: 0.375rem;
+
+font-weight: 600;
+
+text-decoration:
+
+margin-bottom: 1.5rem;
+
+/* Ensure no default button border */
+clickable */
+
+color: white;
+
+border: none;
+
+cursor: pointer; /* Indicate it's
+
+margin-right: 1rem; /* Space between buttons if multiple */
+
+}
+.back-button:hover, .fetch-button:hover {
+
+background-
+
+color: #ea8a0c;
+}
+
+/* Styles for the specific box for Neck Blast - Finger Millet */
+.bls-details-box {
+
+background-color: #fffbeb; /* Lighter
+
+yellow background */
+
+border: 2px solid #d97706; /* Darker
+
+orange border */
+border-radius: 0.75rem;
+
+padding: 2rem;
+
+margin-top: 2rem;
+
+box-shadow: 0 4px 6px rgba(0, 0, 0,
+
+0.1);
+}
+
+148/166
+
+.bls-details-box h2 {
+
+font-size: 2rem;
+
+font-weight: 700;
+
+color: #92400e; /* Even darker
+
+orange-brown */
+
+margin-bottom: 1.5rem;
+
+}
+.bls-details-box p {
+font-size: 1.125rem;
+
+line-
+
+height: 1.75rem;
+#7c2d12;
+
+color:
+
+margin-bottom:
+
+1rem;
+}
+.bls-details-box ul {
+list-style-type: square;
+margin-left: 1.5rem;
+
+color:
+
+#7c2d12;
+}
+.bls-details-box ul li {
+
+margin-
+
+bottom: 0.5rem;
+}
+.bls-metabolites-section {
+margin-top: 1.5rem;
+}
+.bls-metabolites-section table {
+width: 100%;
+collapse;
+
+border-collapse:
+margin-top: 1rem;
+
+}
+.bls-metabolites-section th, .bls-metabolites-section td {
+border: 1px solid #fbd38d; /* Light orange border */
+
+149/166
+
+padding: 0.75rem;
+
+text-align: left;
+
+font-size:
+
+0.95rem;
+}
+.bls-metabolites-section th {
+
+background-
+
+color: #f6ad55; /* Orange-400 */
+
+color: white;
+
+font-weight: 600;
+}
+.bls-metabolites-section tr:nth-child(even) {
+
+background-
+
+color: #fef3c7; /* Lighter cream for even rows */
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="mhome.html" class="back-button">← Back to Home</a>
+<h1 id="pageTitle" class="section-title">Finger Millet - Leaf, finger and neck blast
+Details</h1>
+
+<div id="neckBlastFingerMilletDetailsBox" class="bls-details-box">
+<h2 id="neckBlastFingerMilletBoxTitle"></h2>
+<p><strong>Stress Type:</strong>Biotic Stress</span></p>
+<p><strong>Disease:</strong>Leaf, finger and neck blast </span></p>
+<p><strong>Causal Agent:</strong>Magnaporthe grisea </span></p>
+<p><strong>Cultivar Name:</strong>KM 252 </span></p>
+<p><strong>Geographical:</strong>susceptible variety of finger millet used in the
+experiment for studying blast disease </span></p>
+<p><strong>Conditions:</strong>Natural field infection</span></p>
+<p><strong>Parts of the Plant:</strong>Leaf, neck, finger</span></p>
+
+150/166
+
+<p><strong>Method Used for Infection:</strong>Naturally infected field
+samples</span></p>
+<p><strong>Techniques Used to Identify:</strong>TLC, GC-MS </span></p>
+
+<button id="fetchMetabolitesButton" class="fetch-button"><a
+href="millet_results.html?millet=finger_millet&table_name=finger_1">Fetch
+Metabolites</a></button>
+
+<div id="neckBlastFingerMilletMetabolites" class="bls-metabolites-section">
+<h3>Associated Metabolites:</h3>
+</div>
+</div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const urlParams = new URLSearchParams(window.location.search);
+const milletType = urlParams.get('millet');
+urlParams.get('stress_type');
+
+const stressType =
+
+const disease = urlParams.get('disease');
+
+const causalAgent = urlParams.get('causal_agent');
+
+// Additional parameters from the data-attributes of the "detail-box"
+const cultivarName = urlParams.get('cultivar_name');
+const geographical = urlParams.get('geographical');
+const conditions = urlParams.get('conditions');
+urlParams.get('parts_of_plant');
+urlParams.get('method_infection');
+
+const partsOfPlant =
+
+const methodInfection =
+const techniquesUsedToIdentify =
+
+urlParams.get('techniques_used_to_identify');
+
+151/166
+
+// Populate static details
+
+const pageTitle =
+
+document.getElementById('pageTitle');
+
+pageTitle.textContent =
+
+`${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease}
+Details`;
+
+document.getElementById('neckBlastFingerMilletBoxTitle').textContent = `Details for
+${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease}`;
+document.getElementById('neckBlastFingerMilletMillet').textContent =
+milletType.charAt(0).toUpperCase() + milletType.slice(1);
+document.getElementById('neckBlastFingerMilletStressType').textContent = stressType;
+document.getElementById('neckBlastFingerMilletDisease').textContent = disease;
+document.getElementById('neckBlastFingerMilletCausalAgent').textContent = causalAgent;
+
+// Populate the newly added static details
+document.getElementById('neckBlastFingerMilletCultivarName').textContent =
+cultivarName || 'NIL';
+document.getElementById('neckBlastFingerMilletGeographical').textContent = geographical
+|| 'NIL';
+
+document.getElementById('neckBlastFingerMilletConditions').textContent =
+
+conditions || 'NIL';
+document.getElementById('neckBlastFingerMilletPartsOfPlant').textContent = partsOfPlant
+|| 'NIL'; document.getElementById('neckBlastFingerMilletMethodInfection').textContent =
+methodInfection || 'NIL';
+
+document.getElementById('neckBlastFingerMilletTechniquesUsedToIdentify').textCont ent =
+techniquesUsedToIdentify || 'NIL';
+
+// Get the button element
+const fetchMetabolitesButton =
+document.getElementById('fetchMetabolitesButton');
+
+152/166
+
+// Add event listener to the button
+fetchMetabolitesButton.addEventListener('click', () => {
+fetchNeckBlastFingerMilletMetabolites(milletType, stressType, disease, causalAgent);
+});
+
+async function fetchNeckBlastFingerMilletMetabolites(millet, stress, diseaseName,
+causalAgentName) {
+const resultsContainer =
+document.getElementById('neckBlastFingerMilletMetabolites');
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>Loading
+metabolites...</p>'; // Loading message
+
+// Construct query parameters
+= new URLSearchParams({
+stress_type: stress,
+
+const params
+
+millet: millet,
+disease: diseaseName,
+
+causal_agent: causalAgentName,
+'finger_1' // <-- CHANGED TO finger_1
+
+table_name:
+});
+
+try {
+const response = await fetch(`fetch_metabolites.php?${params.toString()}`);
+const data = await response.json();
+
+if (data.error) {
+
+resultsContainer.innerHTML = `<h3>Associated
+
+Metabolites:</h3><p>Error:
+${data.error}</p>`;
+return;
+}
+
+153/166
+
+if (data.length > 0) {
+let tableHTML = `
+<table>
+<thead>
+<tr>
+<th>Metabolites</th>
+<th>PubChem ID</th>
+<th>SMILES</th>
+<th>Activity (Experimental)</th>
+<th>Activity (Predicted)</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+`;
+data.forEach(metabolite => {
+tableHTML += `
+<tr>
+<td>${metabolite['METABOLITES'] || 'NIL'}</td>
+<td>${metabolite['PUBCHEM ID'] || 'NIL'}</td>
+<td>${metabolite['SMILES'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(EXPERIMENTAL)'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(PREDICTED)'] || 'NIL'}</td>
+<td>${metabolite['REFERENCES'] || 'NIL'}</td>
+</tr>
+`;
+});
+154/166
+
+tableHTML += `
+</tbody>
+</table>
+`;
+resultsContainer.innerHTML = `<h3>Associated
+Metabolites:</h3>${tableHTML}`;
+} else {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>No
+metabolites found for this selection.</p>';
+}
+} catch (error) {
+resultsContainer.innerHTML = `<h3>Associated Metabolites:</h3><p>Failed to
+fetch data: ${error}</p>`;
+
+console.error('Error fetching metabolites:', error);
+
+}
+}
+});
+</script>
+</body>
+</html>
+

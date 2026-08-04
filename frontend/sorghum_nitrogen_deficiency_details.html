@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorghum - Nitrogen Deficiency Stress Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+<style>
+
+body {
+
+font-family: 'Inter', sans-serif;
+
+color: #fefce8; /* Very light yellow/cream for background */
+
+backgroundcolor:
+
+#7c2d12; /* Darker orange-brown text */
+}
+.container {
+
+max-
+
+width: 1200px;
+margin: 0 auto;
+padding: 1.5rem;
+}
+.section-title {
+
+font-size: 1.875rem;
+
+/* text-3xl */
+
+font-weight: 600; /* font-
+
+semibold */
+
+color: #1e293b; /* Darker
+
+slate gray */
+
+margin-bottom: 1.5rem;
+
+border-bottom: 2px solid #f59e0b; /* Orange500 border */
+
+padding-bottom:
+
+0.5rem;
+}
+
+130/166
+
+.back-button, .fetch-button {
+display: inline-block;
+background-color: #f59e0b;
+color: white;
+
+padding:
+
+0.75rem 1.5rem;
+
+border-
+
+radius: 0.375rem;
+
+text-
+
+decoration: none;
+
+font-
+
+weight: 600;
+1.5rem;
+
+margin-bottom:
+border: none;
+
+cursor: pointer;
+
+margin-
+
+right: 1rem;
+}
+.back-button:hover, .fetch-button:hover {
+
+background-
+
+color: #ea8a0c;
+}
+
+/* Styles for the specific box for Nitrogen Deficiency - Sorghum */
+.bls-details-box {
+
+background-color: #fffbeb; /* Lighter
+
+yellow background */
+
+border: 2px solid #d97706; /* Darker
+
+orange border */
+border-radius: 0.75rem;
+
+padding: 2rem;
+
+margin-top: 2rem;
+
+box-shadow: 0 4px 6px rgba(0, 0, 0,
+
+0.1);
+}
+.bls-details-box h2 {
+
+font-size: 2rem;
+
+font-weight: 700;
+
+color: #92400e; /* Even darker
+
+orange-brown */
+
+margin-bottom: 1.5rem;
+
+}
+
+131/166
+
+.bls-details-box p {
+font-size: 1.125rem;
+
+line-
+
+height: 1.75rem;
+#7c2d12;
+
+color:
+
+margin-bottom:
+
+1rem;
+}
+.bls-details-box ul {
+list-style-type: square;
+margin-left: 1.5rem;
+
+color:
+
+#7c2d12;
+}
+.bls-details-box ul li {
+
+margin-
+
+bottom: 0.5rem;
+}
+.bls-metabolites-section {
+margin-top: 1.5rem;
+}
+.bls-metabolites-section table {
+width: 100%;
+collapse;
+
+border-collapse:
+margin-top: 1rem;
+
+}
+.bls-metabolites-section th, .bls-metabolites-section td {
+border: 1px solid #fbd38d; /* Light orange border */
+padding: 0.75rem;
+
+text-align: left;
+
+font-size:
+
+0.95rem;
+}
+
+132/166
+
+.bls-metabolites-section th {
+
+background-
+
+color: #f6ad55; /* Orange-400 */
+
+color: white;
+
+font-weight: 600;
+}
+.bls-metabolites-section tr:nth-child(even) {
+
+background-
+
+color: #fef3c7; /* Lighter cream for even rows */
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="mhome.html" class="back-button">← Back to Home</a>
+<h1 id="pageTitle" class="section-title">Sorghum - Nitrogen Deficiency Stress
+Details</h1>
+
+<div id="nitrogenDeficiencySorghumDetailsBox" class="bls-details-box">
+<h2 id="nitrogenDeficiencySorghumBoxTitle"></h2>
+<p><strong>Stress Type:</strong> Abiotic – Nitrogen deficiency (low nitrogen
+conditions)></span></p>
+<p><strong>Disease:</strong> NIL</span></p>
+<p><strong>Causal Agent:</strong> NIL</span></p>
+<p><strong>Cultivar Name:</strong> 10 diverse genotypes including hybrids and
+inbreds- PI297130,PI505735,PI506030,PI510757,PI642998,PI655972,
+C126,C225,CO53,CO56</span></p>
+<p><strong>Geographical:</strong> Uganda,Zambia, Togo, Cameroon,U.S,
+U.S.(Kansas),U.S.(South Carolina),U.S.(South Carolina),U.S.(South
+Carolina),U.S.(SouthCarolina)</span></p>
+<p><strong>Conditions:</strong> Low nitrogen (N) vs. full nitrogen (N); two time
+points: July and September</span></p>
+<p><strong>Parts of the Plant:</strong> Roots</span></p>
+133/166
+
+<p><strong>Method Used for Infection:</strong> NIL</span></p>
+<p><strong>Techniques Used to Identify:</strong> UPLC- MS/MS</span></p>
+
+<button id="fetchMetabolitesButton" class="fetch-button"><a
+href=millet_results.html?millet=sorghum&table_name=sorghum_7>Fetch
+Metabolites</a></button>
+
+<div id="nitrogenDeficiencySorghumMetabolites" class="bls-metabolitessection">
+<h3>Associated Metabolites:</h3>
+</div>
+</div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const urlParams = new URLSearchParams(window.location.search);
+// Default values tailored for Nitrogen Deficiency Stress
+const milletType = urlParams.get('millet') || 'sorghum';
+
+const
+
+stressType = urlParams.get('stress_type') || 'Abiotic Stress'; const disease
+= urlParams.get('disease') || 'Nitrogen Deficiency Stress';
+const causalAgent = urlParams.get('causal_agent') || 'Lack of Available Nitrogen'; //
+Common causal agent
+
+const cultivarName = urlParams.get('cultivar_name');
+urlParams.get('geographical');
+
+const conditions = urlParams.get('conditions');
+
+const partsOfPlant = urlParams.get('parts_of_plant');
+urlParams.get('method_infection');
+
+const geographical =
+
+const methodInfection =
+
+const techniquesUsedToIdentify =
+
+urlParams.get('techniques_used_to_identify');
+
+134/166
+
+// Populate static details
+document.getElementById('pageTitle').textContent =
+`${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease} Details`;
+document.getElementById('nitrogenDeficiencySorghumBoxTitle').textContent = `Details for
+${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease}`;
+document.getElementById('nitrogenDeficiencySorghumMillet').textContent =
+milletType.charAt(0).toUpperCase() + milletType.slice(1);
+document.getElementById('nitrogenDeficiencySorghumStressType').textContent
+=
+
+stressType;
+
+document.getElementById('nitrogenDeficiencySorghumDisease').textContent = disease;
+document.getElementById('nitrogenDeficiencySorghumCausalAgent').textContent =
+causalAgent;
+
+document.getElementById('nitrogenDeficiencySorghumCultivarName').textContent =
+cultivarName || 'NIL';
+
+document.getElementById('nitrogenDeficiencySorghumGeographical').textContent
+geographical
+||
+document.getElementById('nitrogenDeficiencySorghumConditions').textContent
+= conditions || 'NIL';
+
+=
+'NIL';
+
+document.getElementById('nitrogenDeficiencySorghumPartsOfPlant').textContent =
+partsOfPlant || 'NIL';
+
+document.getElementById('nitrogenDeficiencySorghumMethodInfection').textContent =
+methodInfection || 'NIL';
+document.getElementById('nitrogenDeficiencySorghumTechniquesUsedToIdentify').tex
+tContent = techniquesUsedToIdentify || 'NIL';
+
+135/166
+
+const fetchMetabolitesButton =
+document.getElementById('fetchMetabolitesButton');
+const resultsContainer =
+document.getElementById('nitrogenDeficiencySorghumMetabolites');
+
+fetchMetabolitesButton.addEventListener('click', async () => {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>Loading
+metabolites...</p>';
+
+// Construct query parameters for the fetch_metabolites.php endpoint
+const params = new URLSearchParams({
+millet: milletType,
+stress_type: stressType,
+disease: disease,
+
+causal_agent:
+
+causalAgent,
+// *** CORRECTED CHANGE: Target 'sorghum_7' for Nitrogen Deficiency stress
+table_name:
+
+***
+
+'sorghum_7'
+});
+
+try {
+const response = await fetch(`fetch_metabolites.php?${params.toString()}`);
+if (!response.ok) {
+
+throw new Error(`HTTP error! status: ${response.status}`);
+
+}
+const data = await response.json();
+
+if (data.error) {
+
+resultsContainer.innerHTML = `<h3>Associated
+
+Metabolites:</h3><p>Error:
+${data.error}</p>`;
+136/166
+
+return;
+}
+
+if (data.length > 0) {
+let tableHTML = `
+<table>
+<thead>
+<tr>
+<th>Metabolites</th>
+<th>PubChem ID</th>
+<th>SMILES</th>
+<th>Activity (Experimental)</th>
+<th>Activity (Predicted)</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+`;
+
+data.forEach(metabolite => {
+tableHTML += `
+<tr>
+<td>${metabolite['METABOLITES'] || 'NIL'}</td>
+<td>${metabolite['PUBCHEM ID'] || 'NIL'}</td>
+<td>${metabolite['SMILES'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(EXPERIMENTAL)'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(PREDICTED)'] || 'NIL'}</td>
+<td>${metabolite['REFERENCES'] || 'NIL'}</td>
+137/166
+
+</tr>
+`;
+});
+
+tableHTML += `
+</tbody>
+</table>
+`;
+resultsContainer.innerHTML = `<h3>Associated
+Metabolites:</h3>${tableHTML}`;
+} else {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>No
+metabolites found for this selection.</p>';
+}
+} catch (error) {
+resultsContainer.innerHTML = `<h3>Associated Metabolites:</h3><p>Failed to
+fetch data: ${error.message}</p>`;
+console.error('Error fetching metabolites:', error);
+}
+});
+});
+</script>
+</body>
+</html>
+

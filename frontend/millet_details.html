@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Millet Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+<style>
+
+body {
+
+font-family: 'Inter', sans-serif;
+
+background-
+
+color: #fefce8; /* Very light yellow/cream for background */
+
+color:
+
+#7c2d12; /* Darker orange-brown text */
+}
+.container {
+
+max-
+
+width: 1200px;
+margin: 0 auto;
+padding: 1.5rem;
+}
+.section-title {
+
+font-size: 1.875rem; /* text-3xl */
+
+font-weight: 600; /* font-semibold */
+Darker slate gray */
+
+color: #1e293b; /*
+
+margin-bottom: 1.5rem;
+
+border-
+
+28/166
+
+bottom: 2px solid #f59e0b; /* Orange-500 border */
+padding-bottom: 0.5rem;
+}
+/* Styles for the individual detail boxes */
+.detail-box {
+
+background-color: white;
+
+border-
+
+radius: 0.75rem; /* rounded-xl */
+
+box-shadow: 0 4px 6px
+
+rgba(0, 0, 0, 0.1); /* shadow-md */
+
+padding: 1.5rem;
+
+border: 1px solid #fbd38d; /* Light orange border */ text-align:
+left;
+min-height: 400px; /* Added to make boxes bigger - adjust as needed */
+cursor: pointer; /* Indicate clickability */
+
+transition: all 0.2s ease-in-out;
+
+}
+.detail-box:hover {
+3px);
+
+transform: translateY(-
+
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+border-color: #f59e0b; /* Orange-500 on hover */
+}
+.detail-box h3 {
+
+font-size: 1rem; /* text-lg */
+
+font-weight: 600;
+
+color: #1a472a; /* Changed to a darker green for headings - example color */
+margin-bottom: 0.5rem; /* Reduced margin to make lines closer */
+flex; /* Use flexbox for alignment within h3 */
+
+display:
+
+align-items: baseline; /* Align
+
+items to their baselines */
+}
+/* New styles for alignment of label and value within h3 */
+.detail-box h3 .detail-label {
+
+flex-shrink: 0; /* Prevent label from shrinking */
+
+width: 150px; /* Fixed width for labels, adjust as needed based on your longest label */
+margin-right: 0.5rem; /* Space between label and colon/value */
+600; /* Keep label bold */
+
+font-weight:
+
+color: #1a472a; /* Color for the label part */
+
+}
+29/166
+
+.detail-box h3 .detail-value {
+
+flex-grow: 2; /* Allow
+
+value to take remaining space */
+Color for the value part */
+
+color: #2b580c; /*
+font-weight: 400; /* Make
+
+value less bold than label */
+}
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<header class="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-6 shadowlg">
+<div class="container flex flex-col md:flex-row items-center justify-between">
+<div class="flex items-center mb-4 md:mb-0">
+<img src="logo.jpg" alt="TNAU Logo" class="h-20 w-20 mr-4 rounded-full border-2
+border-white">
+<h1 class="text-4xl font-bold tracking-tight">MilletMetaDB</h1>
+</div>
+<nav class="text-lg">
+<ul class="flex space-x-6">
+<li><a href="mhome.html" class="hover:text-orange-200 transition
+duration300">Home</a></li>
+<li><a href="about.html" class="hover:text-orange-200 transition
+duration300">About</a></li>
+<li><a href="#" class="hover:text-orange-200 transition
+duration300">Contact</a></li>
+<li><a href="#" class="hover:text-orange-200 transition
+duration300">Help</a></li>
+<li><a href="#" class="hover:text-orange-200 transition
+duration300">Statistics</a></li>
+</ul>
+30/166
+
+</nav>
+</div>
+</header>
+
+<main class="flex-grow container py-8">
+<h2 id="milletNameTitle" class="section-title">Details for [Millet Name Here]</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
+id="detailBoxesContainer">
+<div class="detail-box" data-box-id="1">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Biotic</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">Bacterial leaf stripe</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">Burkholderia andropogonis</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">NS 5511, NS 5655</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">Grain sorghum hybrids, Southern Africa</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Leaves</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">leaf infiltration</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">UHPLC-MS analysis</span></h3>
+</div>
+<div class="detail-box" data-box-id="2">
+
+31/166
+
+<h3><span class="detaillabel">Stress Type</span>: <span class="detailvalue">Biotic</span></h3>
+<h3><span class="detail label">Disease</span>: <span
+class="detailvalue">Anthracnose</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">Colletotrichum sublineolum</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span class="detailvalue">In
+vitro batch culture, carbon sources: glucose, arabinose, rhamnose, 12-day
+growth</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">In vitro simulation</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">LC-MS</span></h3>
+</div>
+<div class="detail-box" data-box-id="3">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Biotic</span></h3>
+<h3><span class="detail-label">Disease</span>: <span class="detailvalue">Crown
+Rot</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">Fusarium pseudograminearum</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">NIL</span></h3>
+32/166
+
+<h3><span class="detail<h3><span class="detail-label">Conditions</span>: <span
+class="detailvalue">Paenibacillus alvei-primed + Fusarium-infected</span></h3>
+label">Parts of the Plant</span>: <span class="detailvalue">Roots, Stems, Leaves</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">Fusarium pseudograminearum inoculated at 10⁶
+spores/mL</span></h3>
+
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">UHPLC-HDMS metabolomics</span></h3>
+</div>
+<div class="detail-box" data-box-id="4">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic drought</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">Samsorg 17 / Samsorg 40</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">Drought-tolerant cultivar developed for semi-arid regions,Less droughttolerant, commonly used for comparison in stress studies</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span
+class="detailvalue">Water withheld for 5 days, temperature ~35°C</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Leaves</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">NIL</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">NIL</span></h3>
+</div>
+
+33/166
+
+<h3><span class="detail<div class="detail-box" data-box-id="5">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic salt stress</span></h3>
+label">Disease</span>: <span class="detailvalue">NIL</span></h3>
+<h3><span class="detail label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">Gaoliangzhe (GZ),Henong16 (HN)</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">GZ-landrace variety,high salt tolerance HN-improved
+cultivar,salthypersensitive</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span class="detailvalue">Salt
+treatment for 0, 24, 48, 72 hrs (NaCl)</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Leaves</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">NIL</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">NIL</span></h3>
+</div>
+<div class="detail-box" data-box-id="6">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic-Ensiling (anaerobic fermentation stress during
+silage)</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">Sweet sorghum variety (DAKA)</span></h3>
+34/166
+
+<h3><span class="detail<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">grown in Gansu Province, Tongwei County (Dingxi city)</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span class="detailvalue">Two
+dry matter (DM) conditions: 27% DM (low) and 39% DM (high)</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Forage (whole plant silage)</span></h3>
+label">Method Used for Infection</span>: <span
+class="detail-value">NIL</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">LC–ESI
+MS/MS</span></h3>
+</div>
+<div class="detail-box" data-box-id="7">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic – Nitrogen deficiency (low nitrogen conditions)</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">10 diverse genotypes including hybrids and inbredsPI297130,PI505735,PI506030,PI510757,PI642998,PI655972,
+C126,C225,CO53,CO56</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">Uganda,Zambia, Togo, Cameroon,U.S, U.S.(Kansas),U.S.(South
+Carolina),U.S.(South Carolina),U.S.(South Carolina),U.S.(SouthCarolina)</span></h3>
+<h3><span class="detail-label">Conditions</span>: <span class="detailvalue">Low nitrogen (N) vs. full nitrogen (N); two time points: July and
+September</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Roots</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">NIL</span></h3>
+35/166
+
+<h3><span class="detail<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">UPLC- MS/MS</span></h3>
+</div>
+<div class="detail-box" data-box-id="8">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic Endoplasmic Reticulum (ER) Stress</span></h3>
+label">Disease</span>: <span class="detailvalue">NIL</span></h3>
+<h3><span class="detail label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">CSF18 (sensitive), CSF20 (tolerant)</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">Agronomic Institute of Pernambuco (IPA) in Brazil </span></h3>
+<h3><span class="detail-label">Conditions</span>: <span
+class="detailvalue">Tunicamycin treatment: 0 (control), 0.5, 1.5, and 2.5
+µg/mL</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Shoots and roots</span></h3>
+<h3><span class="detail-label">Method Used for Infection</span>: <span
+class="detail-value">NIL</span></h3>
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value">GC-MS</span></h3>
+</div>
+<div class="detail-box" data-box-id="9">
+<h3><span class="detail-label">Stress Type</span>: <span
+class="detailvalue">Abiotic Heat stress (High temperature)</span></h3>
+<h3><span class="detail-label">Disease</span>: <span
+class="detailvalue">NIL</span></h3>
+<h3><span class="detail-label">Causal Agent</span>: <span
+class="detailvalue">NIL</span></h3>
+36/166
+
+<h3><span class="detail<h3><span class="detail-label">Cultivar Name</span>: <span
+class="detailvalue">FF_SC449-14E( tolerant), FF_SC906-14E( sensitive )</span></h3>
+<h3><span class="detail-label">Geographical</span>: <span
+class="detailvalue">elite backcross lines derived from the Sorghum Conversion Program
+(SCP) </span></h3>
+<h3><span class="detail-label">Conditions</span>: <span
+class="detailvalue">Heat shock treatment at 45 °C for 6 days</span></h3>
+<h3><span class="detail-label">Parts of the Plant</span>: <span
+class="detailvalue">Leaves, Whole plant</span></h3>
+label">Method Used for Infection</span>: <span
+class="detail-value">NIL</span></h3>
+
+<h3><span class="detail-label">Techniques Used to Identify</span>: <span
+class="detail-value"> GC-MS</span></h3>
+</div>
+
+</div>
+</main>
+
+<footer class="bg-orange-900 text-white py-6 mt-auto">
+<div class="container text-center text-sm">
+<p>&copy; 2024 MilletMetaDB. All rights reserved.</p>
+<p>Developed by TNAU Research Team. For academic and research purposes
+only.</p>
+<div class="flex justify-center space-x-4 mt-2">
+<a href="#" class="hover:text-orange-200 transition duration-300">Privacy
+Policy</a>
+<span class="text-gray-500">|</span>
+<a href="#" class="hover:text-orange-200 transition duration-300">Terms of
+Use</a>
+
+37/166
+
+<h3><span class="detail<span class="text-gray-500">|</span>
+<a href="#" class="hover:text-orange-200 transition duration300">Disclaimer</a>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+38/166
+
+const params = new URLSearchParams(window.location.search);
+const millet = params.get('millet');
+
+const milletNameTitle = document.getElementById('milletNameTitle');
+const detailBoxes = document.querySelectorAll('.detail-box');
+
+if (millet) {
+milletNameTitle.textContent = `Details for: ${millet.charAt(0).toUpperCase() +
+millet.slice(1)}`;
+} else {
+milletNameTitle.textContent = 'Millet Details';
+}
+
+// Add click event listeners to each detail box
+detailBoxes.forEach((box) => {
+box.addEventListener('click', () => {
+
+let
+
+targetUrl = 'millet_results.html?';
+
+const
+
+boxId = box.dataset.boxId;
+
+const commonParams = {
+millet: millet
+};
+
+let specificParams = {};
+
+// For each box, set table_name based on boxId
+// This logic remains the same
+if (boxId === '1') {
+39/166
+
+specificParams = { table_name: 'sorghum_1' };
+} else if (boxId === '2') {
+specificParams = { table_name: 'sorghum_2' };
+} else if (boxId === '3') {
+specificParams = { table_name: 'sorghum_3' };
+} else if (boxId === '4') {
+specificParams = { table_name: 'sorghum_4' };
+} else if (boxId === '5') {
+specificParams = { table_name: 'sorghum_5' };
+} else if (boxId === '6') {
+specificParams = { table_name: 'sorghum_6' };
+} else if (boxId === '7') {
+specificParams = { table_name: 'sorghum_7' };
+} else if (boxId === '8') {
+specificParams = { table_name: 'sorghum_8' };
+} else if (boxId === '9') {
+specificParams = { table_name: 'sorghum_9' };
+} else {
+specificParams = { table_name: 'sorghum_1' }; // Default to sorghum_1 if boxId
+is not explicitly handled
+}
+
+// *** IMPORTANT: The JavaScript will now ONLY add 'millet' and 'table_name'
+// because we've removed the other data-* attributes from the HTML. ***
+
+const
+
+allParams = { ...commonParams, ...specificParams };
+
+// This filter is no longer strictly necessary for simplifying the URL,
+// but it's good practice to keep for robustness.
+40/166
+
+const filteredParams = Object.fromEntries(
+Object.entries(allParams).filter(([_, v]) => v !== '' && v !== 'NIL')
+);
+
+targetUrl += new URLSearchParams(filteredParams).toString();
+window.location.href = targetUrl;
+});
+});
+});
+</script>
+
+</body>
+</html>
+

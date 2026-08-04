@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorghum - Drought Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+104/166
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&dis
+play=swap" rel="stylesheet">
+<style>
+
+body {
+
+font-family: 'Inter', sans-serif;
+
+background-
+
+color: #fefce8; /* Very light yellow/cream for background */
+
+color:
+
+#7c2d12; /* Darker orange-brown text */
+}
+.container {
+
+max-
+
+width: 1200px;
+margin: 0 auto;
+padding: 1.5rem;
+}
+.section-title {
+
+font-size: 1.875rem; /* text-3xl */
+
+font-weight: 600; /* font-semibold */
+Darker slate gray */
+
+color: #1e293b; /*
+
+margin-bottom: 1.5rem;
+
+border-
+
+bottom: 2px solid #f59e0b; /* Orange-500 border */
+padding-bottom: 0.5rem;
+}
+.back-button, .fetch-button {
+display: inline-block;
+background-color: #f59e0b;
+color: white;
+
+padding:
+
+0.75rem 1.5rem;
+
+border-
+
+radius: 0.375rem;
+
+text-
+
+decoration: none;
+
+font-
+
+weight: 600;
+1.5rem;
+
+margin-bottom:
+border: none;
+
+105/166
+
+cursor: pointer;
+
+margin-
+
+right: 1rem;
+}
+.back-button:hover, .fetch-button:hover {
+
+background-
+
+color: #ea8a0c;
+}
+
+/* Styles for the specific box for Drought - Sorghum */
+
+.bls-details-box {
+
+background-color: #fffbeb; /* Lighter yellow background */
+
+border: 2px solid
+
+#d97706; /* Darker orange border */
+
+margin-top: 2rem;
+
+border-radius: 0.75rem;
+
+padding: 2rem;
+
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+.bls-details-box h2 {
+
+font-size: 2rem;
+
+font-weight: 700;
+
+color: #92400e; /* Even darker
+
+orange-brown */
+
+margin-bottom: 1.5rem;
+
+}
+.bls-details-box p {
+font-size: 1.125rem;
+height: 1.75rem;
+#7c2d12;
+
+linecolor:
+
+margin-bottom:
+
+1rem;
+}
+.bls-details-box ul {
+list-style-type: square;
+margin-left: 1.5rem;
+
+color:
+
+#7c2d12;
+}
+
+106/166
+
+.bls-details-box ul li {
+
+margin-
+
+bottom: 0.5rem;
+}
+.bls-metabolites-section {
+margin-top: 1.5rem;
+}
+.bls-metabolites-section table {
+width: 100%;
+collapse;
+
+border-collapse:
+margin-top: 1rem;
+
+}
+.bls-metabolites-section th, .bls-metabolites-section td {
+border: 1px solid #fbd38d; /* Light orange border */
+padding: 0.75rem;
+
+text-align: left;
+
+font-size:
+
+0.95rem;
+}
+.bls-metabolites-section th {
+
+background-
+
+color: #f6ad55; /* Orange-400 */
+
+color: white;
+
+font-weight: 600;
+}
+.bls-metabolites-section tr:nth-child(even) {
+
+background-
+
+color: #fef3c7; /* Lighter cream for even rows */
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="mhome.html" class="back-button">← Back to Home</a>
+
+107/166
+
+<h1 id="pageTitle" class="section-title">Sorghum - Drought Details</h1>
+<div id="droughtSorghumDetailsBox" class="bls-details-box">
+<h2 id="droughtSorghumBoxTitle"></h2>
+<p><strong>Stress Type:</strong>Abiotic drought Stress </span></p>
+<p><strong>Disease:</strong>NIL</span></p>
+<p><strong>Causal Agent:</strong>NIL </span></p>
+<p><strong>Cultivar Name:</strong>Samsorg 17 / Samsorg 40 </span></p>
+<p><strong>Geographical:</strong>Drought-tolerant cultivar developed for semiarid
+regions,Less drought-tolerant, commonly used for comparison in stress studie </span></p>
+<p><strong>Conditions:</strong>Water withheld for 5 days, temperature ~35°C
+</span></p>
+<p><strong>Parts of the Plant:</strong>Leaves</span></p>
+<p><strong>Method Used for Infection:</strong>NIL</span></p>
+<p><strong>Techniques Used to Identify:</strong>NIL</span></p>
+
+<button id="fetchMetabolitesButton" class="fetch-button"><a
+href=millet_results.html?millet=sorghum&table_name=sorghum_4>Fetch
+Metabolites</a></button>
+
+<div id="droughtSorghumMetabolites" class="bls-metabolites-section">
+<h3>Associated Metabolites:</h3>
+</div>
+</div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const urlParams = new URLSearchParams(window.location.search);
+Default values are now set here, making it robust
+urlParams.get('millet') || 'sorghum';
+urlParams.get('stress_type') || 'Drought';
+
+//
+
+const milletType =
+
+const stressType =
+const disease =
+108/166
+
+urlParams.get('disease') || 'Drought Stress';
+
+const causalAgent =
+
+urlParams.get('causal_agent') || 'Abiotic (Water Deficiency)';
+
+const cultivarName = urlParams.get('cultivar_name');
+urlParams.get('geographical');
+
+const conditions = urlParams.get('conditions');
+
+const partsOfPlant = urlParams.get('parts_of_plant');
+urlParams.get('method_infection');
+
+const geographical =
+
+const methodInfection =
+
+const techniquesUsedToIdentify =
+
+urlParams.get('techniques_used_to_identify');
+
+// Populate static details
+document.getElementById('pageTitle').textContent =
+`${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease} Details`;
+document.getElementById('droughtSorghumBoxTitle').textContent = `Details for
+${milletType.charAt(0).toUpperCase() + milletType.slice(1)} - ${disease}`;
+document.getElementById('droughtSorghumMillet').textContent =
+milletType.charAt(0).toUpperCase() + milletType.slice(1);
+document.getElementById('droughtSorghumStressType').textContent = stressType;
+document.getElementById('droughtSorghumDisease').textContent = disease;
+document.getElementById('droughtSorghumCausalAgent').textContent = causalAgent;
+
+document.getElementById('droughtSorghumCultivarName').textContent =
+cultivarName || 'NIL';
+document.getElementById('droughtSorghumGeographical').textContent = geographical ||
+'NIL';
+
+document.getElementById('droughtSorghumConditions').textContent =
+
+conditions || 'NIL';
+document.getElementById('droughtSorghumPartsOfPlant').textContent = partsOfPlant ||
+'NIL';
+
+document.getElementById('droughtSorghumMethodInfection').textContent =
+
+methodInfection || 'NIL';
+document.getElementById('droughtSorghumTechniquesUsedToIdentify').textContent =
+techniquesUsedToIdentify || 'NIL';
+109/166
+
+const fetchMetabolitesButton =
+document.getElementById('fetchMetabolitesButton');
+const resultsContainer =
+document.getElementById('droughtSorghumMetabolites');
+
+// Remove the anchor tag from the button as we are handling navigation via
+JavaScript fetch
+// Also, the href was pointing to millet_results.html, but the intention is to fetch data
+// into the current page.
+fetchMetabolitesButton.addEventListener('click', async () => {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>Loading
+metabolites...</p>';
+
+// Construct query parameters for the fetch_metabolites.php endpoint
+const params = new URLSearchParams({
+millet: milletType,
+stress_type: stressType,
+disease: disease,
+causalAgent,
+
+causal_agent:
+// Assuming
+
+'sorghum_4' or 'sorghum_drought' is the
+correct table name for drought
+// You need to ensure your `fetch_metabolites.php` uses this `table_name`
+parameter
+// to query the correct database table.
+table_name: 'sorghum_drought' // Use the specific table for drought details
+});
+
+try {
+110/166
+
+const response = await fetch(`fetch_metabolites.php?${params.toString()}`);
+if (!response.ok) {
+
+throw new Error(`HTTP error! status: ${response.status}`);
+
+}
+const data = await response.json();
+
+if (data.error) {
+
+resultsContainer.innerHTML = `<h3>Associated
+
+Metabolites:</h3><p>Error:
+${data.error}</p>`;
+return;
+}
+
+if (data.length > 0) {
+let tableHTML = `
+<table>
+<thead>
+<tr>
+<th>Metabolites</th>
+<th>PubChem ID</th>
+<th>SMILES</th>
+<th>Activity (Experimental)</th>
+<th>Activity (Predicted)</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+`;
+
+111/166
+
+data.forEach(metabolite => {
+tableHTML += `
+<tr>
+<td>${metabolite['METABOLITES'] || 'NIL'}</td>
+<td>${metabolite['PUBCHEM ID'] || 'NIL'}</td>
+<td>${metabolite['SMILES'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(EXPERIMENTAL)'] || 'NIL'}</td>
+<td>${metabolite['ACTIVITY(PREDICTED)'] || 'NIL'}</td>
+<td>${metabolite['REFERENCES'] || 'NIL'}</td>
+</tr>
+`;
+});
+
+tableHTML += `
+</tbody>
+</table>
+`;
+resultsContainer.innerHTML = `<h3>Associated
+Metabolites:</h3>${tableHTML}`;
+} else {
+resultsContainer.innerHTML = '<h3>Associated Metabolites:</h3><p>No
+metabolites found for this selection.</p>';
+}
+} catch (error) {
+resultsContainer.innerHTML = `<h3>Associated Metabolites:</h3><p>Failed to
+fetch data: ${error.message}</p>`;
+console.error('Error fetching metabolites:', error);
+}
+});
+112/166
+
+});
+</script>
+</body>
+</html>
+

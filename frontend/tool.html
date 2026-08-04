@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Batch Metabolite Tool</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+body {
+
+color: #fefce8;
+
+backgroundfont-family:
+
+'Inter', sans-serif;
+}
+
+73/166
+
+table {
+
+width: 100%;
+
+border-collapse: collapse;
+margin-top: 20px;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 10px;
+
+word-break:
+
+break-word;
+}
+th {
+background-color: #f59e0b;
+color: white;
+}
+#resultSection {
+display: none;
+}
+</style>
+</head>
+<body class="p-6">
+<h1 class="text-3xl font-bold mb-4 text-orange-700 text-center">Batch Metabolite Search
+Tool</h1>
+<div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+<input type="file" id="csvFile" accept=".csv" class="mb-4 block w-full">
+<button onclick="uploadAndSearch()" class="bg-orange-600 text-white px-4 py-2 rounded
+hover:bg-orange-700">Search</button>
+</div>
+
+<div id="resultSection" class="mt-8 max-w-6xl mx-auto">
+74/166
+
+<h2 class="text-xl font-semibold mb-4 text-orange-700">Search Results</h2>
+<div id="resultsContainer"></div>
+<button id="downloadBtn" onclick="downloadCSV()" class="mt-4 bg-green-600 textwhite
+px-4 py-2 rounded hover:bg-green-700">Download CSV</button>
+</div>
+
+<script>
+
+let
+
+resultData = [];
+
+function uploadAndSearch() {
+
+const fileInput =
+
+document.getElementById('csvFile');
+
+const file =
+
+fileInput.files[0];
+
+if (!file) {
+alert("Please upload a CSV file.");
+return;
+}
+
+const formData = new FormData();
+formData.append('csv', file);
+
+fetch('batch_search.php', {
+method: 'POST',
+body: formData
+})
+.then(res => res.json())
+
+.then(data => {
+
+resultData = data;
+
+document.getElementById('resultSection').style.display = 'block';
+
+75/166
+
+const table = document.createElement('table');
+table.innerHTML = `
+<thead>
+<tr>
+<th>Metabolite</th>
+<th>PubChem ID</th>
+<th>SMILES</th>
+<th>Activity (Experimental)</th>
+<th>Activity (Predicted)</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+${data.map(row => `
+<tr>
+<td>${row.METABOLITES}</td>
+<td>${row['PUBCHEM ID']}</td>
+<td>${row.SMILES}</td>
+<td>${row['ACTIVITY(EXPERIMENTAL)']}</td>
+<td>${row['ACTIVITY(PREDICTED)']}</td>
+
+<td>${row.REFERENCES}</td>
+
+</tr>
+`).join('')}
+</tbody>
+`;
+document.getElementById('resultsContainer').innerHTML = '';
+document.getElementById('resultsContainer').appendChild(table);
+})
+
+76/166
+
+.catch(err => {
+console.error(err);
+alert("Something went wrong.");
+});
+}
+
+function downloadCSV() {
+
+const blob = new
+
+Blob([convertToCSV(resultData)], { type: 'text/csv' });
+URL.createObjectURL(blob);
+
+const url =
+
+const a = document.createElement('a');
+
+a.href = url;
+a.download = 'search_results.csv';
+a.click();
+URL.revokeObjectURL(url);
+}
+
+function convertToCSV(arr) {
+
+const headers = ["METABOLITES", "PUBCHEM ID",
+
+"SMILES", "ACTIVITY(EXPERIMENTAL)", "ACTIVITY(PREDICTED)", "REFERENCES"];
+
+const
+
+rows = arr.map(row => headers.map(h => `"${row[h] || 'Not Found'}"`).join(','));
+
+return
+
+[headers.join(','), ...rows].join('\n');
+}
+</script>
+</body>
+</html>
+
+<?php header('Content-Type:
+application/json');
+
+$host = 'localhost';
+77/166
+
+$db = 'mmdb';
+$user = 'root';
+$pass = '';
+$conn = new mysqli($host, $user, $pass, $db); if
+($conn->connect_error) {
+
+echo
+
+json_encode([]);
+exit;
+}
+
+if ($_FILES['csv']['error'] !== UPLOAD_ERR_OK) {
+
+echo
+
+json_encode([]);
+exit;
+}
+
+$csvData = array_map('str_getcsv', file($_FILES['csv']['tmp_name']));
+$metabolites = array_map('trim', array_column($csvData, 0));
+
+$tables = ['sorghum', 'finger'];
+$results = [];
+
+foreach ($metabolites as $metaboliteName) {
+$found = false;
+
+foreach
+
+($tables as $table) {
+$stmt = $conn->prepare("SELECT `METABOLITES`, `PUBCHEM ID`, `SMILES`,
+`ACTIVITY(EXPERIMENTAL)`, `ACTIVITY(PREDICTED)`, `REFERENCES` FROM `$table` WHERE
+`METABOLITES` = ?");
+$stmt->bind_param("s", $metaboliteName);
+$stmt->execute();
+
+78/166
+
+$res = $stmt->get_result();
+
+if ($row = $res->fetch_assoc()) {
+$results[] = $row;
+$found = true;
+
+break;
+
+}
+$stmt->close();
+}
+
+if (!$found) {
+$results[] = [
+"METABOLITES" => $metaboliteName,
+"PUBCHEM ID" => "Not Found",
+"SMILES" => "Not Found",
+"ACTIVITY(EXPERIMENTAL)" => "Not Found",
+"ACTIVITY(PREDICTED)" => "Not Found",
+"REFERENCES" => "Not Found"
+];
+}
+}
+
+$conn->close(); echo
+json_encode($results);
+?>
+
